@@ -3,7 +3,7 @@ import fiverLogo from '../../assets/fiver-logo.png'
 
 const Navbar = () => {
   return (
-    <div className='flex justify-center bg-red-800 '>
+    <div className='flex flex-col items-center bg-red-800'>
       <div className='w-11/12 flex justify-between py-5 px-0'>
         <div>
           <img className='h-7 w-20' src={fiverLogo} alt="fiver-logo"  />
@@ -20,6 +20,14 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+    <hr className='border border-solid border-slate-200 w-full h-0'/>
+
+    <div className='w-11/12 flex justify-between text-white py-2 px-0 '>
+      <span>test1</span>
+      <span>test2</span>
+    </div>
+
     </div>
   )
 }
