@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import fiverLogo from '../../assets/Fiverr New.png'
+import fiverLogoW from '../../assets/fiver-logo.png'
 import userPic from '../../assets/user-picture.png'
 import { Link, useLocation } from 'react-router-dom';
 
@@ -28,13 +29,21 @@ const Navbar = () => {
   }
 
   return (
-    <div className={ active || pathname !=='/' ? 'flex flex-col items-center bg-white transition duration-500 ease-in-out sticky top-0' : 'flex flex-col items-center bg-red-800 transition duration-500 ease-in-out sticky top-0 '}>
+    <div className={ active || pathname !=='/' ? 'flex flex-col items-center bg-white transition duration-500 ease-in-out sticky top-0' : 'flex flex-col items-center bg-green-600 transition duration-500 ease-in-out sticky top-0 '}>
       <div className='w-11/12 flex justify-between py-1 px-0'>
+        {active ? 
         <div>
           <Link to='/'>
-          <img className='h-24 w-36' src={fiverLogo} alt="fiver-logo"  />
+          <img className='h-20 w-32' src={fiverLogo} alt="fiver-logo"  />
           </Link>
-        </div>
+        </div> 
+        : 
+          <div className='h-24 w-36 flex items-center'>
+             <Link to='/'>
+          <img className='h-6 w-24 ' src={fiverLogoW} alt="fiver-logo"  />
+          </Link>
+          </div>
+        }
         <div className={active ? 'flex gap-6 font-medium items-center text-black' : 'flex gap-6 text-white font-medium items-center'}>
           <span>Fiverr Business</span>
           <span>Explore</span>
@@ -85,3 +94,10 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+
+// <div>
+// <Link to='/'>
+// <img className='h-7 w-24 ' src={fiverLogoW} alt="fiver-logo"  />
+// </Link>
+// </div>
