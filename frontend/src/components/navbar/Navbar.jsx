@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import fiverLogo from '../../assets/Fiverr New.png'
 import userPic from '../../assets/user-picture.png'
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
 
   const [active,setActive] = useState(false);
   const [open,setOpen] = useState(false)
+
+  const {pathname} = useLocation();
   
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
@@ -25,10 +28,12 @@ const Navbar = () => {
   }
 
   return (
-    <div className={ active ? 'flex flex-col items-center bg-white transition duration-500 ease-in-out sticky top-0' : 'flex flex-col items-center bg-red-800 transition duration-500 ease-in-out sticky top-0 '}>
+    <div className={ active || pathname !=='/' ? 'flex flex-col items-center bg-white transition duration-500 ease-in-out sticky top-0' : 'flex flex-col items-center bg-red-800 transition duration-500 ease-in-out sticky top-0 '}>
       <div className='w-11/12 flex justify-between py-1 px-0'>
         <div>
+          <Link to='/'>
           <img className='h-24 w-36' src={fiverLogo} alt="fiver-logo"  />
+          </Link>
         </div>
         <div className={active ? 'flex gap-6 font-medium items-center text-black' : 'flex gap-6 text-white font-medium items-center'}>
           <span>Fiverr Business</span>
@@ -47,13 +52,13 @@ const Navbar = () => {
             { open && <div className='absolute top-12 right-0 p-5 bg-white rounded-lg border-2 border-solid border-slate-200 flex flex-col gap-2 w-48 text-slate-600 font-light'>
                 {currentUser?.isSeller && (
                   <>
-                  <span>Gigs</span>
-                  <span>Add new Gig</span>
+                  <Link to='/myGigs' >Gigs</Link>
+                  <Link to='/add' >Add new Gig</Link>
                   </>
                 )}
-                <span>Orders</span>
-                <span>Messages</span>
-                <span>Logout</span>
+                <Link to='/orders' >Orders</Link>
+                <Link to='/messages' >Messages</Link>
+                <Link to='' >Logout</Link>
               </div>}
             </div>
           )}
@@ -62,17 +67,17 @@ const Navbar = () => {
 
     <hr className='border border-solid border-slate-200 w-full h-0'/>
 
-   { active && 
-   <div className={active ? 'w-11/12 flex justify-between text-black py-2 px-0 ' :'w-11/12 flex justify-between text-white py-2 px-0 '}>
-      <span>Graphics & Design</span>
-      <span>Digital Marketing</span>
-      <span>Writing & Translation</span>
-      <span>Video & Animation</span>
-      <span>Music & Audio</span>
-      <span>Programming & Tech</span>
-      <span>Photography</span>
-      <span>Business</span>
-      <span>AI Services</span>
+   { (active || pathname !=='/') && 
+   <div className={active || pathname !=='/' ? 'w-11/12 flex justify-between text-black py-2 px-0 ' :'w-11/12 flex justify-between text-white py-2 px-0 '}>
+      <Link to='/' >Graphics & Design</Link >
+      <Link to='/' >Digital Marketing</Link >
+      <Link to='/' >Writing & Translation</Link >
+      <Link to='/' >Video & Animation</Link >
+      <Link to='/' >Music & Audio</Link >
+      <Link to='/' >Programming & Tech</Link >
+      <Link to='/' >Photography</Link >
+      <Link to='/' >Business</Link >
+      <Link to='/' >AI Services</Link >
     </div>}
 
     </div>
