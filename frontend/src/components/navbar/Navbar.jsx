@@ -31,8 +31,8 @@ const Navbar = () => {
     <div
       className={
         active || pathname !== "/"
-          ? "flex flex-col items-center bg-white transition duration-500 ease-in-out sticky top-0"
-          : "flex flex-col items-center bg-green-600 transition duration-500 ease-in-out sticky top-0 "
+          ? "flex flex-col items-center bg-white transition duration-500 ease-in-out sticky top-0 z-50"
+          : "flex flex-col items-center bg-green-600 transition duration-500 ease-in-out sticky top-0 z-50 "
       }
     >
       <div className="w-11/12 flex justify-between py-1 px-0">
