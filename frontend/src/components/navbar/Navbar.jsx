@@ -100,7 +100,12 @@ const Navbar = () => {
         </div>
       </div>
 
-      <hr className="border border-solid border-slate-200 w-full h-0" />
+      {active  && (
+        <hr className="border border-solid border-slate-200 w-full h-0" />
+      )}
+      {pathname !=='/'   && (
+        <hr className="border border-solid border-slate-200 w-full h-0" />
+      )}
 
       {(active || pathname !== "/") && (
         <div
