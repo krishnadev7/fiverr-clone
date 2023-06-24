@@ -61,6 +61,38 @@ const Home = () => {
         </div>
       </div>
       </div>
+
+      <div className="pt-24 pb-0">
+      <div className="bg-indigo-950 flex justify-center p-24">
+        <div className="flex items-center gap-48 ">
+          <div className="flex flex-col gap-4">
+            <h1 className="font-medium pb-6 text-3xl text-white">fiverr business</h1>
+            <h1 className="font-medium pb-6 text-3xl text-white">A solution built for business</h1>
+            <p className="text-white mb-5">Upgrade to a curated experience to access vetted talent and exclusive tools</p>
+            <div className="flex items-center gap-2 font-medium text-sm text-white ">
+              <img className="h-6 w-6" src={check} />
+              Talent matching
+            </div>
+            <div className="flex items-center gap-2 font-medium  text-sm text-white">
+              <img className="h-6 w-6" src={check} />
+              Dedicated account management
+            </div>
+            <div className="flex items-center gap-2 font-medium  text-sm text-white">
+              <img className="h-6 w-6" src={check} />
+              Team collaboration tools
+            </div>
+            <div className="flex items-center gap-2 font-medium text-sm text-white ">
+              <img className="h-6 w-6" src={check} />
+              Business payment solutions
+            </div>
+            <button className="bg-green-500 text-white p-3 rounded text-sm cursor-pointer mt-5 w-max">Explore Fiverr Business</button>
+          </div>
+          <div className="flex flex-col gap-4">
+            <img className="" src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_870,dpr_1.0/v1/attachments/generic_asset/asset/d9c17ceebda44764b591a8074a898e63-1599597624757/business-desktop-870-x1.png" />
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
   );
 };
