@@ -2,10 +2,11 @@ import React from "react";
 import Featured from "../../components/featured/Featured";
 import TrustedBy from "../../components/trustedBy/TrustedBy";
 import Slide from "../../components/slide/Slide";
-import { cards } from "../../data";
+import { cards, projects } from "../../data";
 import CatCard from "../../components/catCard/CatCard";
 import video from "../../assets/img/video.mp4";
 import check from "../../assets/img/check.png";
+import ProjectCard from "../../components/projectCard/ProjectCard";
 
 const Home = () => {
   return (
@@ -93,6 +94,11 @@ const Home = () => {
         </div>
       </div>
       </div>
+      <Slide slidesToShow={5} arrowsScroll={5} pSlider={true}>
+        {projects.map((card) => (
+          <ProjectCard item={card} key={card.id} />
+        ))}
+      </Slide>
     </div>
   );
 };
