@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { HiOutlineHome } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import downImg from "../../assets/img/down.png";
 
 const Gigs = () => {
+  const [open, setOpen] = useState(false);
+  const [sort, setSort] = useState("sales");
+
+  const reSort = (type) => {
+    setSort(type);
+    setOpen(false);
+  };
+
   return (
     <div className="flex justify-center">
       <div className="w-11/12 pt-8 pb-8 flex flex-col gap-4">
@@ -38,17 +46,33 @@ const Gigs = () => {
           </div>
           <div className="flex items-center gap-2 relative">
             <span className="text-slate-500 font-light">Sort By</span>
-            <span className="font-medium">Best Selling</span>
+            <span className="font-medium">
+              {sort === "sales" ? "Best Selling" : "Newest"}
+            </span>
             <img
               className="w-4 cursor-pointer"
               src={downImg}
-              alt=""
-              srcset=""
+              onClick={() => setOpen(!open)}
             />
-            <div className="p-5 bg-white rounded border border-solid border-slate-500 absolute top-7 right-0 flex flex-col gap-5 text-slate-500 ">
-              <span className="cursor-pointer">Newest</span>
-              <span className="cursor-pointer">Best Selling</span>
-            </div>
+            {open && (
+              <div className="p-5 bg-white rounded border border-solid border-slate-500 absolute top-7 right-0 flex flex-col gap-5 text-slate-500 ">
+                {sort === "sales" ? (
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => reSort("createdAt")}
+                  >
+                    Newest
+                  </span>
+                ) : (
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => reSort("sales")}
+                  >
+                    Best Selling
+                  </span>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
