@@ -6,7 +6,7 @@ import heart from "../../assets/img/heart.png";
 function GigCard({ item }) {
   return (
     <Link to="/gig/123">
-      <div className="w-80 h-96 border border-solid border-gray-200 mb-6">
+      <div className="w-80 h-max border border-solid border-gray-200 mb-6">
         <img className="w-full h-2/4 object-cover" src={item.img} />
         <div className="flex flex-col gap-4 pt-3 pb-3 pl-5 pr-5">
           <div className="flex items-center gap-2">

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { HiOutlineHome } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import downImg from "../../assets/img/down.png";
+import {gigs} from '../../data'
+import GigCard from '../../components/gigCard/GigCard'
 
 const Gigs = () => {
   const [open, setOpen] = useState(false);
@@ -74,6 +76,11 @@ const Gigs = () => {
               </div>
             )}
           </div>
+        </div>
+        <div className="flex flex-wrap justify-between">
+                  {gigs.map((gig) => (
+                    <GigCard key={gig.id} item={gig}/>
+                  ))}
         </div>
       </div>
     </div>
