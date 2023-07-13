@@ -12,3 +12,9 @@
     bottom: 0;
     margin: auto;
 }
+.left{
+    flex: 2;
+}
+.right{
+    flex:1;
+}
