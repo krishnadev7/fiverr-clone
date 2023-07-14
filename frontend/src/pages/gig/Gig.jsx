@@ -5,6 +5,9 @@ import stars from "../../assets/img/star.png";
 import likeImg from "../../assets/img/like.png";
 import dislikeImg from "../../assets/img/dislike.png";
 import { Slider } from "infinite-react-carousel";
+import clockImg from '../../assets/img/clock.png';
+import greencheckImg from '../../assets/img/greencheck.png';
+import recycleImg from '../../assets/img/recycle.png';
 
 const Gig = () => {
   return (
@@ -115,7 +118,7 @@ const Gig = () => {
                   <span className="desc">English</span>
                 </div>
               </div>
-              <hr className="h-0 border border-solid border-gray-300 mb-5"/>
+              <hr className="h-0 border border-solid border-gray-300 mb-5" />
               <p className="font-light text-slate-600 leading-6">
                 Hi there & welcome to my shop. I'm ai_lani - a digital artist
                 who creates fully customizable images based on your specific
@@ -126,19 +129,20 @@ const Gig = () => {
             </div>
           </div>
 
-          <div className="reviews">
+          <div className="reviews mt-12">
             <h2>Reviews</h2>
-            <div className="item">
-              <div className="user">
+            <div className="item flex flex-col gap-5 mt-5 mb-5">
+              <div className="user flex  items-center gap-2">
                 <img
-                  className="pp"
+                  className="pp w-12 h-12 rounded-3xl object-cover"
                   src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&w=1600"
                   alt=""
                 />
-                <div className="info">
-                  <span>Garner David</span>
-                  <div className="country">
+                <div className="info flex flex-col gap-1">
+                  <span className="text-sm font-medium">Garner David</span>
+                  <div className="country flex items-center gap-2 text-gray-400">
                     <img
+                      className="w-5 h-5"
                       src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png"
                       alt=""
                     />
@@ -162,26 +166,27 @@ const Gig = () => {
                 above and beyond my expectations. I absolutely recommend this
                 gig, and know already that Ill be using it again very very soon
               </p>
-              <div className="helpful">
+              <div className="helpful flex items-center gap-2">
                 <span>Helpful?</span>
-                <img src={likeImg} alt="" />
+                <img className="w-4 h-4" src={likeImg} alt="" />
                 <span>Yes</span>
-                <img src={dislikeImg} alt="" />
+                <img className="w-4 h-4" src={dislikeImg} alt="" />
                 <span>No</span>
               </div>
             </div>
-            <hr />
-            <div className="item">
-              <div className="user">
+            <hr className="border border-solid border-gray-300 h-0" />
+            <div className="item flex flex-col gap-5 mt-5 mb-5">
+              <div className="user flex  items-center gap-2">
                 <img
-                  className="pp"
+                  className="pp w-12 h-12 rounded-3xl object-cover"
                   src="https://images.pexels.com/photos/4124367/pexels-photo-4124367.jpeg?auto=compress&cs=tinysrgb&w=1600"
                   alt=""
                 />
-                <div className="info">
-                  <span>Sidney Owen</span>
+                <div className="info flex flex-col gap-1">
+                  <span className="text-sm font-medium">Sidney Owen</span>
                   <div className="country">
                     <img
+                      className="w-5 h-5"
                       src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e9-1f1ea.png"
                       alt=""
                     />
@@ -203,26 +208,27 @@ const Gig = () => {
                 punctuality is above industry standards!! Whatever your project
                 is, you need this designer!
               </p>
-              <div className="helpful">
+              <div className="helpful flex items-center gap-2">
                 <span>Helpful?</span>
-                <img src={likeImg} alt="" />
+                <img className="w-4 h-4" src={likeImg} alt="" />
                 <span>Yes</span>
-                <img src={dislikeImg} alt="" />
+                <img className="w-4 h-4" src={dislikeImg} alt="" />
                 <span>No</span>
               </div>
             </div>
-            <hr />
-            <div className="item">
-              <div className="user">
+            <hr className="border border-solid border-gray-300 h-0" />
+            <div className="item flex flex-col gap-5 mt-5 mb-5">
+              <div className="user flex  items-center gap-2">
                 <img
-                  className="pp"
+                  className="pp w-12 h-12 rounded-3xl object-cover"
                   src="https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1600"
                   alt=""
                 />
-                <div className="info">
-                  <span>Lyle Giles </span>
+                <div className="info flex flex-col gap-1">
+                  <span className="text-sm font-medium">Lyle Giles </span>
                   <div className="country">
                     <img
+                      className="w-5 h-5"
                       src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png"
                       alt=""
                     />
@@ -245,17 +251,55 @@ const Gig = () => {
                 expectations. I absolutely recommend this gig, and know already
                 that Ill be using it again very very soon
               </p>
-              <div className="helpful">
+              <div className="helpful flex items-center gap-2">
                 <span>Helpful?</span>
-                <img src={likeImg} alt="" />
+                <img className="w-4 h-4" src={likeImg} alt="" />
                 <span>Yes</span>
-                <img src={dislikeImg} alt="" />
+                <img className="w-4 h-4" src={dislikeImg} alt="" />
                 <span>No</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="right flex-1"></div>
+        <div className="right border border-solid border-gray-300 p-5 rounded flex flex-col gap-5 h-max max-h-96 sticky top-36">
+          <div className="price flex items-center justify-between">
+            <h3 className="font-medium">1 AI generated image</h3>
+            <h2 className="font-light">$ 59.99</h2>
+          </div>
+          <p className="text-gray-500 mt-2 mb-2">
+            I will create a unique high quality AI generated image based on a
+            description that you give me
+          </p>
+          <div className="details flex items-center justify-between text-sm">
+            <div className="item flex items-center gap-2">
+              <img className="w-5" src={clockImg} alt="" />
+              <span>2 Days Delivery</span>
+            </div>
+            <div className="item flex items-center gap-2">
+              <img className="w-5" src={recycleImg} alt="" />
+              <span>3 Revisions</span>
+            </div>
+          </div>
+          <div className="features">
+            <div className="item flex items-center gap-2 font-light text-gray-500 mb-1 mt-1">
+              <img className="w-4" src={greencheckImg} alt="" />
+              <span>Prompt writing</span>
+            </div>
+            <div className="item flex items-center gap-2 font-light text-gray-500 mb-1 mt-1">
+              <img className="w-4" src={greencheckImg} alt="" />
+              <span>Artwork delivery</span>
+            </div>
+            <div className="item flex items-center gap-2 font-light text-gray-500 mb-1 mt-1">
+              <img className="w-4" src={greencheckImg} alt="" />
+              <span>Image upscaling</span>
+            </div>
+            <div className="item flex items-center gap-2 font-light text-gray-500 mb-1 mt-1">
+              <img className="w-4" src={greencheckImg} alt="" />
+              <span>Additional design</span>
+            </div>
+          </div>
+          <button className="bg-green-500 p-2 text-white font-medium border-none text-lg cursor-pointer">Continue</button>
+        </div>
       </div>
     </div>
   );
