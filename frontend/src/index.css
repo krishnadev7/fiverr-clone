@@ -18,3 +18,13 @@
 .right{
     flex:1;
 }
+
+table{
+    width: 100%;
+}
+
+tr{
+    &:nth-child(even){
+        background-color: #1dbf730f;
+    }
+}

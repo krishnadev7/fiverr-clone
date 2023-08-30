@@ -86,7 +86,7 @@ const Navbar = () => {
                 <div className="absolute top-12 right-0 p-5 bg-white rounded-lg border-2 border-solid border-slate-200 flex flex-col gap-2 w-48 text-slate-600 font-light">
                   {currentUser?.isSeller && (
                     <>
-                      <Link to="/myGigs">Gigs</Link>
+                      <Link to="/mygigs">Gigs</Link>
                       <Link to="/add">Add new Gig</Link>
                     </>
                   )}
@@ -101,13 +101,14 @@ const Navbar = () => {
       </div>
 
       {active  && (
-        <hr className="border border-solid border-slate-200 w-full h-0" />
+        <hr className="border border-solid border-slate-200 w-full h-0 " />
       )}
       {pathname !=='/'   && (
         <hr className="border border-solid border-slate-200 w-full h-0" />
       )}
 
       {(active || pathname !== "/") && (
+        <>
         <div
           className={
             active || pathname !== "/"
@@ -125,6 +126,8 @@ const Navbar = () => {
           <Link to="/">Business</Link>
           <Link to="/">AI Services</Link>
         </div>
+        <hr className="border border-solid border-slate-200 w-full h-0" />
+        </>
       )}
     </div>
   );
